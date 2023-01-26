@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://kit.fontawesome.com/367b5f9c08.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+</head>
+<body>
+  <main>
+    <img src="./images/logo.svg" alt="">
+
+    <h1>We are launching <span>soon!</span></h1>
+    <p>Subscribe and get notified</p>
+
+    <div class="form">
+      <div id="form-parent">
+        <input id="email" type="text" placeholder="Your email address...">
+        <p id="error">Please provide a valid email address</p>
+      </div>
+
+      <button onclick="btn()">Notify Me</button>
+      
+    </div>
+
+    <img src="./images/illustration-dashboard.png" alt="" class="dashboard">
+
+    <div class="socials">
+      <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+      <a href=""><i class="fa-brands fa-twitter"></i></a>
+      <a href=""><i class="fa-brands fa-instagram"></i></a>  
+    </div>
+
+    <footer>
+      © Copyright Ping. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    function btn()
+    {
+      var email = document.getElementById("email");
+      var isAt = document.getElementById("email").value.indexOf("@");
+
+      if(isAt != -1)
+      {
+        //good email
+        document.getElementById("error").style.display = "none";
+        email.style.borderColor = "hsl(223, 100%, 88%)";
+      }
+      else
+      {
+        document.getElementById("error").style.display = "block";
+        email.style.borderColor = "hsl(354, 100%, 66%)";
+      }
+    }
+  </script>
+</body>
+</html>
